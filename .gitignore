@@ -26,7 +26,8 @@ env/
 .pytest_cache/
 
 # Data — large CSVs, not source
-data/*.csv
+# (CSVs committed for Render deployment; remove this rule if you regenerate them)
+# data/*.csv
 
 # Environment — secrets
 .env
