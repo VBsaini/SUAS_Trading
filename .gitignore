@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# pytest
+.pytest_cache/
+
+# Data — large CSVs, not source
+data/*.csv
+
+# Environment — secrets
+.env
+.env.local
+.env.*.local
+
+# Frontend — separate repo, not part of this project
+frontend/suas/
+
+# Frontend build artifacts
+frontend/node_modules/
+frontend/.next/
+frontend/dist/
+frontend/build/
+
+# OS
+.DS_Store
+Thumbs.db
