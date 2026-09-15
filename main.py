@@ -8,6 +8,7 @@ import re
 from datetime import date
 from pathlib import Path
 from urllib.error import HTTPError, URLError
+from urllib.parse import quote
 from urllib.request import Request, urlopen
 
 import pandas as pd
@@ -183,7 +184,7 @@ def _ai_json(prompt: str) -> dict[str, object] | None:
 	if AI_PROVIDER == "gemini":
 		if not api_key:
 			return None
-		url = f"https://generativelanguage.googleapis.com/v1beta/models/{AI_MODEL}:generateContent?key={api_key}"
+		url = f"https://generativelanguage.googleapis.com/v1beta/models/{quote(AI_MODEL, safe='')}:generateContent?key={api_key}"
 		payload = {"contents": [{"parts": [{"text": f"Return valid JSON only.\n{prompt}"}]}], "generationConfig": {"temperature": 0.1, "responseMimeType": "application/json"}}
 	elif AI_PROVIDER == "ollama":
 		url = AI_URL
